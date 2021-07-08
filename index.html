@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css' integrity='sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu' crossorigin='anonymous'>
+</head>
+<body>
+    <div id='box1'></div>
+    <button id = 'btn1'>按钮</button>
+</body>
+<script>
+    //document 对象，通过这个对象可以操作网页中的任何元素
+    var box1 = document.querySelector("#box1");//在整个网页文档中找id = 'box1'的元素
+    var box2 = document.querySelector("#box2");
+    console.log('box1',box1);
+    console.log('box2',box2);
+    console.log(typeof box1);//object
+    box1.style.backgroundColor = 'red'
+    box1.style.width = '100px'
+    box1.style.height = '100px'
 
+    box1.innerText = '我是box1';
+    box1.innerHTML = '<a href="http://www.baidu.com">百度</a>'
+
+    //获取按钮对象
+    var btn1 = document.querySelector('#btn1');
+    btn1.classList.add('btn');
+    btn1.classList.add('btn-primary');
+    btn1.classList.remove('btn-primary');
+    btn1.classList.add('btn-success');
+    
+    //onclick 是事件属性，元素被点击后触发
+    var flag = true;
+    btn1.onclick = function(){
+        if(flag){
+            box1.style.backgroundColor = 'red'
+        }else{
+            box1.style.backgroundColor = 'yellow';
+        }
+        flag = !flag;
+    }
+
+</script>
+</html>
